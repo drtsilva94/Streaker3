@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tasks.css">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="add-task.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho com a data e dias da semana -->
+        <header>
+            <div class="date">
+                <h2></h2> <!-- Aqui será exibido o dia e o dia da semana -->
+                <p></p> <!-- Aqui será exibido o mês e o ano -->
+            </div>
+       
+        </header>
+
+        <!-- Ícones para manhã, tarde e noite -->
+        <div class="period-icons">
+            <div class="icon morning" id="icon-morning"></div>
+            <div class="icon afternoon" id="icon-afternoon"></div>
+            <div class="icon night" id="icon-night"></div>
+        </div>
+
+        <!-- Título do período -->
+        <div class="title">
+            <h3 id="period-title">Morning</h3>
+        </div>
+
+        <!-- Lista de tarefas -->
+        <div class="tasks" id="task-list">
+            <!-- As tarefas serão geradas dinamicamente -->
+        </div>
+
+        <!-- Rodapé com ícones -->
+        <footer>
+            <button class="icon-btn home"></button>
+            <button class="icon-btn add" id="add-task-btn"></button>
+
+            <button class="icon-btn stats"></button>
+        </footer>
+    </div>
+
+
+    <!-- Modal para adicionar tarefa -->
+    <div class="modal" id="add-task-modal">
+        <div class="modal-content">
+            <h3>Add New Habit</h3>
+            <form id="add-task-form">
+                <label for="task-name">Habit Name:</label>
+                <input type="text" id="task-name" placeholder="Enter habit name" required>
+            
+                <label for="task-color">Select a Color:</label>
+                <div id="color-options">
+                    <span class="color-option" data-color="#FFC1C1" style="background-color: #FFC1C1;"></span>
+                    <span class="color-option" data-color="#FFDD93" style="background-color: #FFDD93;"></span>
+                    <span class="color-option" data-color="#A5E1AD" style="background-color: #A5E1AD;"></span>
+                    <span class="color-option" data-color="#ADD8E6" style="background-color: #ADD8E6;"></span>
+                    <span class="color-option" data-color="#D7BDE2" style="background-color: #D7BDE2;"></span>
+                </div>
+                <input type="hidden" id="task-color" value="#FFC1C1">
+            
+                <label for="task-period">Period:</label>
+                <select id="task-period" required>
+                    <option value="morning">Morning</option>
+                    <option value="afternoon">Afternoon</option>
+                    <option value="night">Night</option>
+                </select>
+            
+                <div class="form-actions">
+                    <button type="submit" id="submit-task">Save</button>
+                    <button type="button" id="cancel-task">X</button>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="add-task.js"></script>
+
+</body>
+</html>
