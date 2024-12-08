@@ -1,0 +1,83 @@
+/* Tarefas */
+.tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Espaçamento reduzido entre as tarefas */
+    flex-grow: 1; /* Faz as tarefas ocuparem o espaço disponível */
+    overflow-y: auto; /* Permite rolagem para listas longas */
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #DDD;
+    padding: 12px; /* Espaçamento interno */
+    border-radius: 8px;
+    background-color: #F4F4F4;
+}
+
+.task-line {
+    width: 80%;
+    height: 10px; /* Altura ajustada */
+    background-color: #DDD;
+    border-radius: 4px;
+}
+
+/* Estilo das tarefas */
+.task {
+    display: flex;
+    align-items: center;
+    background-color: #FFE4E1;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative; /* Para posicionar o botão de exclusão */
+    transition: background-color 0.3s;
+}
+
+.task .check {
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+.task span {
+    flex-grow: 1;
+    color: #333;
+}
+
+/* Esconde o botão de exclusão inicialmente */
+.task .delete-btn {
+    display: none;
+    background-color: transparent;
+    color: #FF3333;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 8px;
+}
+
+/* Exibe o botão de exclusão somente quando a classe 'done' está ativa */
+.task.done .delete-btn {
+    display: block;
+}
+
+
+.task.done {
+    background-color: #D3FFD3; /* Cor de fundo para tarefas concluídas */
+}
+
+.task .delete-btn {
+    background-color: transparent;
+    color: #FF3333;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 8px;
+}
+
+.task .delete-btn:hover {
+    color: #FF0000;
+}

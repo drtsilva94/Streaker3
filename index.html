@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="tasks.css">
     <link rel="stylesheet" href="modal.css">
     <link rel="stylesheet" href="add-task.css">
+    <link rel="stylesheet" href="css/stats.css">
 </head>
 <body>
     <div class="container">
@@ -41,7 +42,6 @@
         <footer>
             <button class="icon-btn home"></button>
             <button class="icon-btn add" id="add-task-btn"></button>
-
             <button class="icon-btn stats"></button>
         </footer>
     </div>
@@ -81,8 +81,50 @@
         </div>
     </div>
 
+    <div class="container">
+        <!-- Tela de progresso -->
+        <section id="progress-screen" class="progress-container">
+            <h2 class="progress-title">Progress</h2>
+            <div class="habit-name-container">
+                <p id="habit-name" class="habit-title">Habit Name</p>
+            </div>
+
+            <!-- Calendário -->
+            <div class="progress-calendar">
+                <div class="month-navigation">
+                    <button onclick="changeMonth(-1)" class="month-button" aria-label="Previous Month">&#60;</button>
+                    <p id="month-label" class="month-title">December 2024</p>
+                    <button onclick="changeMonth(1)" class="month-button" aria-label="Next Month">&#62;</button>
+                </div>
+                <div class="calendar-grid" id="calendar-grid">
+                    <!-- Dias do calendário gerados dinamicamente -->
+                </div>
+            </div>
+
+            <!-- Informações de streak -->
+            <div class="streak-info">
+                <p>This Streak: <span id="current-streak">0 days</span></p>
+                <p>Longest Streak: <span id="longest-streak">0 days</span></p>
+            </div>
+
+            <!-- Botões de ação -->
+            <div class="progress-actions">
+                <button class="action-btn edit-habit" onclick="editHabitName()">Edit Habit</button>
+                <button class="action-btn delete-habit" onclick="deleteHabit()">Delete Habit</button>
+            </div>
+        </section>
+
+        <!-- Rodapé com botões de navegação -->
+        <footer>
+            <button class="icon-btn home"></button>
+            <button class="icon-btn add" id="add-task-btn"></button>
+            <button class="icon-btn stats"></button>
+        </footer>
+    </div>
+
     <script src="script.js"></script>
     <script src="add-task.js"></script>
+    <script src="js/stats.js"></script>
 
 </body>
 </html>

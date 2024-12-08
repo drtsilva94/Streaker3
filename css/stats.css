@@ -1,0 +1,184 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F9F9F9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px; /* Para telas maiores */
+    height: 100%;
+    background-color: #FFFFFF;
+    border: 1px solid #DDD;
+    border-radius: 10px;
+    padding: 16px; /* Espaçamento interno */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Garante que os elementos se alinhem adequadamente */
+    box-sizing: border-box;
+}
+
+/* Tela de progresso com mesmo layout da inicial */
+.progress-screen {
+    width: 100%;
+    max-width: 480px; /* Mesmo tamanho máximo da tela inicial */
+    height: 100%;
+    background-color: #FFFFFF;
+    border: 1px solid #DDD;
+    border-radius: 10px;
+    padding: 16px; /* Espaçamento interno */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribui os elementos internamente */
+    box-sizing: border-box;
+}
+
+/* Cabeçalho do progresso */
+.progress-screen h2 {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+/* Nome do hábito */
+.habit-title {
+    font-size: 20px;
+    color: #333;
+    background-color: #e0e7ff;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+/* Calendário */
+.progress-calendar {
+    width: 100%; /* Ocupa a largura disponível */
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Navegação do calendário */
+.month-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.month-button {
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 colunas para os dias da semana */
+    gap: 5px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.calendar-grid div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #333;
+    background-color: #f0f0f0; /* Cor padrão dos dias */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.calendar-grid .active-day {
+    background-color: #4caf50; /* Verde para o dia atual */
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+}
+
+.calendar-grid .checkin-day {
+    background-color: #ffeb3b; /* Amarelo para dias de check-in */
+    color: #333;
+    font-weight: bold;
+    border-radius: 50%;
+}
+
+.calendar-grid div:empty {
+    visibility: hidden; /* Esconde os dias vazios */
+}
+
+/* Informações de streak */
+.streak-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
+
+/* Botões */
+.edit-habit,
+.delete-habit {
+    width: 100%;
+    max-width: 300px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 16px;
+    align-self: center;
+    text-align: center;
+}
+
+.edit-habit {
+    background-color: #4CAF50; /* Verde claro para edição */
+}
+
+.delete-habit {
+    background-color: #FF3333; /* Vermelho mais forte */
+}
+
+/* Espaçamento entre botões */
+.edit-habit + .delete-habit {
+    margin-top: 8px;
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+    .progress-screen {
+        max-width: 480px;
+        margin: 16px auto; /* Centraliza com margem em desktops */
+    }
+}
